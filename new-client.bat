@@ -12,6 +12,9 @@ pause && npm init && bower init && ^
 npm install gulp gulp-sass gulp-jade gulp-shell gulp-coffee && ^
 curl -O %REPO_URL%gulpfile.js && ^
 mkdir jade html coffee js sass css img && ^
+bower install jquery html5-boilerplate && ^
+cp bower_components/jquery/dist/jquery.min.js js/jquery.min.js && ^
+cp bower_components/html5-boilerplate/dist/css/normalize.css css/normalize.css && ^
 cd coffee && ^
 curl -O %REPO_URL%coffee/main.coffee && ^
 cd ..\jade && ^
