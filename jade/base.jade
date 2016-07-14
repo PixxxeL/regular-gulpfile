@@ -4,15 +4,16 @@ html(lang="ru")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
         meta(name="viewport" content="width=device-width,initial-scale=1")
-        link(rel="apple-touch-icon" href="/img/favicon.png")
-        link(rel="icon shortcut" href="/img/favicon.ico")
+        //-link(rel="apple-touch-icon" href="/img/favicon.png")
+        //-link(rel="icon shortcut" href="/img/favicon.ico")
         block head_seo
             meta(name="robots" content="noyaka")
             meta(name="title" content="")
             meta(name="og:title" content="")
             meta(name="description" content="")
             meta(name="og:description" content="")
-        link(rel="stylesheet" href="/css/normalize.css")
+        link(rel="stylesheet" href="/bower_components/html5-boilerplate/dist/css/normalize.css")
+        link(rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css")
         link(rel="stylesheet" href="/css/main.css")
 
     body
@@ -31,6 +32,6 @@ html(lang="ru")
                 #footer
                     | -- низ --
         
-        script(src="/js/jquery.min.js")
+        script(src="/bower_components/jquery/dist/jquery.min.js")
         script(src="/js/main.js")
 

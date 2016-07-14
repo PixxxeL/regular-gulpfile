@@ -45,3 +45,20 @@ gulp.task('watch', function () {
 });
 
 gulp.task('default', ['jade', 'sass', 'coffee', 'server', 'watch']);
+
+gulp.task('build', function () {
+    gulp.src('css/*.css').pipe(gulp.dest('build/css'));
+    gulp.src('bower_components/html5-boilerplate/dist/css/normalize.css').pipe(gulp.dest('build/css'));
+    gulp.src('bower_components/font-awesome/css/font-awesome.min.css').pipe(gulp.dest('build/css'));
+    gulp.src('bower_components/font-awesome/fonts/*.*').pipe(gulp.dest('build/fonts'));
+    gulp.src('js/*.js').pipe(gulp.dest('build/js'));
+    gulp.src('bower_components/jquery/dist/jquery.min.js').pipe(gulp.dest('build/js'));
+    gulp.src('img/**/*.{png,jpg,gif,ico}').pipe(gulp.dest('build/img'));
+    gulp.src('html/index.html')
+        .pipe(repl('/bower_components/html5-boilerplate/dist/', '/'))
+        .pipe(repl('/bower_components/font-awesome/', '/'))
+        .pipe(repl('/bower_components/jquery/dist/', '/js/'))
+        .pipe(gulp.dest('build'));
+});
+
+gulp.task('demo', shell.task(['cd build && python -m SimpleHTTPServer 8090']));
