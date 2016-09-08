@@ -47,4 +47,5 @@ gulp demo
 ## To Do
 
 * Add scripts to base.jade
+* Replace Jade with [Pug](https://pugjs.org/)
 * Add compress and concatenation of CSS and JS files
