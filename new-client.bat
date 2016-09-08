@@ -18,6 +18,12 @@ if %ERRORLEVEL% NEQ 0 (
     goto ENDSCRIPT
 )
 
+where /Q bower
+if %ERRORLEVEL% NEQ 0 (
+    echo ERROR: You must install Bower for Node.js first
+    goto ENDSCRIPT
+)
+
 where /Q python
 if %ERRORLEVEL% NEQ 0 (
     echo ERROR: You must install Python first

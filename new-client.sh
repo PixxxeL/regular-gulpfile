@@ -1,0 +1,49 @@
+#!/bin/bash
+
+if ! which python > /dev/null; then
+    echo ERROR: You must install Python first
+    return 1
+fi
+
+if ! which nodejs > /dev/null; then
+    echo ERROR: You must install Node.js first
+    return 1
+fi
+
+if ! which npm > /dev/null; then
+    echo ERROR: You must install NPM for Node.js first
+    return 1
+fi
+
+if ! which gulp > /dev/null; then
+    echo ERROR: You must install Gulp for Node.js first
+    return 1
+fi
+
+if ! which bower > /dev/null; then
+    echo ERROR: You must install Bower for Node.js first
+    return 1
+fi
+
+REPO_URL=https://raw.githubusercontent.com/PixxxeL/regular-gulpfile/master/
+
+echo ===========================================================================
+echo  1. Create bower.json, package.json
+echo  2. Download gulpfile.js and skeleton
+echo  3. Make directories
+echo
+
+read -rsp $'Press any key to continue...\n' -n 1 key
+
+npm init && bower init &&
+mkdir -p jade html coffee js sass css img fonts build &&
+npm install --save gulp gulp-sass gulp-jade gulp-shell gulp-coffee gulp-replace &&
+bower install --save jquery#2.2.4 html5-boilerplate font-awesome &&
+wget $REPO_URL"gulpfile.js" -O gulpfile.js &&
+wget $REPO_URL"coffee/main.coffee" -O coffee/main.coffee &&
+wget $REPO_URL"jade/base.jade" -O jade/base.jade &&
+wget $REPO_URL"jade/index.jade" -O jade/index.jade &&
+wget $REPO_URL"sass/_definitions.sass" -O sass/_definitions.sass &&
+wget $REPO_URL"sass/main.sass" -O sass/main.sass &&
+gulp compile &&
+echo && echo Job finish!

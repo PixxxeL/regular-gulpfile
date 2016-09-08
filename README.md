@@ -11,6 +11,7 @@ Using this you can create static web pages.
 * [Python](https://www.python.org/downloads/) for local server
 * [Node](https://nodejs.org/en/download/) with [NPM](https://docs.npmjs.com/getting-started/what-is-npm)
 * [Gulp](http://gulpjs.com/)
+* [Bower](https://bower.io/)
 * [cURL](https://curl.haxx.se/download.html) (for Windows only)
 
 ## Usage
@@ -20,7 +21,7 @@ For create new project on Windows download `new-client.bat` file and run it:
 new-client.bat
 ```
 
-For create new project on Linux (not implemented yet) download `new-client.sh` file and run it:
+For create new project on Linux download `new-client.sh` file and run it:
 ```shell
 new-client.sh
 ```
@@ -45,6 +46,5 @@ gulp demo
 
 ## To Do
 
-* Create Linux script
 * Add scripts to base.jade
 * Add compress and concatenation of CSS and JS files
