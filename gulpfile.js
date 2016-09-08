@@ -1,8 +1,9 @@
 var gulp   = require('gulp'),
     sass   = require('gulp-sass'),
     jade   = require('gulp-jade'),
-    shell  = require('gulp-shell'),
-    coffee = require('gulp-coffee');
+    coffee = require('gulp-coffee'),
+    repl   = require('gulp-replace'),
+    shell  = require('gulp-shell');
 
 var paths = {
     'sass'   : './sass/*.sass',
@@ -15,7 +16,7 @@ gulp.task('sass', function () {
         .pipe(sass({
             indentedSyntax: true
             //sourceComments : true
-        }))
+        }).on('error', sass.logError))
         .pipe(gulp.dest('css'))
     ;
 });
@@ -31,7 +32,11 @@ gulp.task('jade', function () {
 
 gulp.task('coffee', function () {
     gulp.src(paths.coffee)
-        .pipe(coffee({bare: true}))
+        .pipe(coffee({
+            bare: true
+        }).on('error', function (err) {
+            console.log(err);
+        }))
         .pipe(gulp.dest('js'))
     ;
 });
@@ -44,9 +49,12 @@ gulp.task('watch', function () {
     gulp.watch(paths.sass, ['coffee']);
 });
 
-gulp.task('default', ['jade', 'sass', 'coffee', 'server', 'watch']);
+gulp.task('compile', ['jade', 'sass', 'coffee']);
 
-gulp.task('build', function () {
+// Develope task
+gulp.task('default', ['compile', 'server', 'watch']);
+
+gulp.task('copy', function () {
     gulp.src('css/*.css').pipe(gulp.dest('build/css'));
     gulp.src('bower_components/html5-boilerplate/dist/css/normalize.css').pipe(gulp.dest('build/css'));
     gulp.src('bower_components/font-awesome/css/font-awesome.min.css').pipe(gulp.dest('build/css'));
@@ -61,4 +69,8 @@ gulp.task('build', function () {
         .pipe(gulp.dest('build'));
 });
 
+// Build static site task
+gulp.task('build', ['jade', 'sass', 'coffee', 'copy']);
+
+// Run static site
 gulp.task('demo', shell.task(['cd build && python -m SimpleHTTPServer 8090']));

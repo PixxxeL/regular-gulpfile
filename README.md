@@ -11,6 +11,7 @@ Using this you can create static web pages.
 * [Python](https://www.python.org/downloads/) for local server
 * [Node](https://nodejs.org/en/download/) with [NPM](https://docs.npmjs.com/getting-started/what-is-npm)
 * [Gulp](http://gulpjs.com/)
+* [cURL](https://curl.haxx.se/download.html) (for Windows only)
 
 ## Usage
 
@@ -41,3 +42,8 @@ and may browse it at http://127.0.0.1:8090/ with:
 ```shell
 gulp demo
 ```
+
+## To Do
+
+* Create Linux script
+* Add includes to sass and scripts to base.jade
