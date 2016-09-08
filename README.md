@@ -15,12 +15,12 @@ Using this you can create static web pages.
 
 ## Usage
 
-Windows:
+For create new project on Windows download `new-client.bat` file and run it:
 ```batch
 new-client.bat
 ```
 
-Linux (not implemented yet):
+For create new project on Linux (not implemented yet) download `new-client.sh` file and run it:
 ```shell
 new-client.sh
 ```
@@ -46,4 +46,5 @@ gulp demo
 ## To Do
 
 * Create Linux script
-* Add includes to sass and scripts to base.jade
+* Add scripts to base.jade
+* Add compress and concatenation of CSS and JS files
