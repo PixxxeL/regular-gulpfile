@@ -38,7 +38,7 @@ For build static project execute:
 gulp build
 ```
 
-and may browse it at http://127.0.0.1:8090/ with:
+and may browse it at http://127.0.0.1:8090/ after:
 ```shell
 gulp demo
 ```
