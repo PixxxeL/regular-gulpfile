@@ -46,8 +46,9 @@ echo.
 
 pause && npm init && bower init && ^
 mkdir jade html coffee js sass css img fonts build && ^
-npm install --save gulp gulp-sass gulp-jade gulp-shell gulp-coffee gulp-replace && ^
-bower install --save jquery#2.2.4 html5-boilerplate font-awesome && ^
+npm install --save gulp gulp-sass gulp-jade gulp-shell gulp-coffee && ^
+bower install --save jquery-legacy=jquery#1.12.4 jquery-modern=jquery#2.2.4 ^
+html5-boilerplate font-awesome html5shiv respond && ^
 curl -O %REPO_URL%gulpfile.js && ^
 cd coffee && ^
 curl -O %REPO_URL%coffee/main.coffee && ^
@@ -57,7 +58,7 @@ curl -O %REPO_URL%jade/index.jade && ^
 cd ..\sass && ^
 curl -O %REPO_URL%sass/_definitions.sass && ^
 curl -O %REPO_URL%sass/main.sass && ^
-cd .. && gulp compile && ^
+cd .. && gulp compile && gulp copy && ^
 echo. && echo Job finish!
 
 :ENDSCRIPT

@@ -41,11 +41,10 @@ gulp build
 
 and may browse it at http://127.0.0.1:8090/ after:
 ```shell
-gulp demo
+gulp py-demo
 ```
 
 ## To Do
 
-* Add scripts to base.jade
 * Replace Jade with [Pug](https://pugjs.org/)
 * Add compress and concatenation of CSS and JS files

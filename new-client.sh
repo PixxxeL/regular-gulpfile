@@ -37,13 +37,14 @@ read -rsp $'Press any key to continue...\n' -n 1 key
 
 npm init && bower init &&
 mkdir -p jade html coffee js sass css img fonts build &&
-npm install --save gulp gulp-sass gulp-jade gulp-shell gulp-coffee gulp-replace &&
-bower install --save jquery#2.2.4 html5-boilerplate font-awesome &&
+npm install --save gulp gulp-sass gulp-jade gulp-shell gulp-coffee &&
+bower install --save jquery-legacy=jquery#1.12.4 jquery-modern=jquery#2.2.4 \
+html5-boilerplate font-awesome html5shiv respond &&
 wget $REPO_URL"gulpfile.js" -O gulpfile.js &&
 wget $REPO_URL"coffee/main.coffee" -O coffee/main.coffee &&
 wget $REPO_URL"jade/base.jade" -O jade/base.jade &&
 wget $REPO_URL"jade/index.jade" -O jade/index.jade &&
 wget $REPO_URL"sass/_definitions.sass" -O sass/_definitions.sass &&
 wget $REPO_URL"sass/main.sass" -O sass/main.sass &&
-gulp compile &&
+gulp compile && gulp copy &&
 echo && echo Job finish!
