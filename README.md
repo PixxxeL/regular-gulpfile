@@ -33,17 +33,12 @@ For development execute:
 gulp
 ```
 
-and browse 
-```shell
-gulp browse
-```
-
 For build static project execute:
 ```shell
 gulp build
 ```
 
-and may browse it at http://127.0.0.1:8090/ after:
+Test builded version at http://127.0.0.1:8090/ after:
 ```shell
 gulp py-demo
 ```
