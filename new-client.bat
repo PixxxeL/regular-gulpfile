@@ -45,7 +45,7 @@ echo  3. Make directories
 echo.
 
 pause && npm init && bower init && ^
-mkdir jade html coffee js sass css img fonts build && ^
+mkdir jade html coffee js sass css img fonts && ^
 npm install --save gulp gutil del gulp-sass gulp-jade gulp-coffee gulp-shell ^
 gulp-rename gulp-sourcemaps gulp-yuicompressor gulp-concat gulp-zip ^
 gulp-html-replace && ^
@@ -61,6 +61,7 @@ cd ..\sass && ^
 curl -O %REPO_URL%sass/_definitions.sass && ^
 curl -O %REPO_URL%sass/main.sass && ^
 cd .. && gulp compile && gulp copy && ^
+del new-client.bat && ^
 echo. && echo Job finish!
 
 :ENDSCRIPT

@@ -36,7 +36,7 @@ echo
 read -rsp $'Press any key to continue...\n' -n 1 key
 
 npm init && bower init &&
-mkdir -p jade html coffee js sass css img fonts build &&
+mkdir -p jade html coffee js sass css img fonts &&
 npm install --save gulp gutil del gulp-sass gulp-jade gulp-coffee gulp-shell \
 gulp-rename gulp-sourcemaps gulp-yuicompressor gulp-concat gulp-zip \
 gulp-html-replace &&
@@ -49,4 +49,5 @@ wget $REPO_URL"jade/index.jade" -O jade/index.jade &&
 wget $REPO_URL"sass/_definitions.sass" -O sass/_definitions.sass &&
 wget $REPO_URL"sass/main.sass" -O sass/main.sass &&
 gulp compile && gulp copy &&
+rm new-client.sh &&
 echo && echo Job finish!

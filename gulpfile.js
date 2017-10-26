@@ -5,12 +5,12 @@ var gulp       = require('gulp'),
     jade       = require('gulp-jade'),
     coffee     = require('gulp-coffee'),
     rename     = require('gulp-rename'),
-    //repl_str   = require('gulp-replace'),
+    //replStr    = require('gulp-replace'),
     //ftp        = require('vinyl-ftp'),
     sourcemaps = require('gulp-sourcemaps'),
     compress   = require('gulp-yuicompressor'),
     concat     = require('gulp-concat'),
-    repl_html  = require('gulp-html-replace'),
+    replHtml   = require('gulp-html-replace'),
     zip        = require('gulp-zip'),
     shell      = require('gulp-shell');
 
@@ -28,7 +28,7 @@ var paths = {
     'build'  : '../../build'
 };
 
-var separate_js_files = [
+var separateJsFiles = [
     'js/html5shiv.min.js', 'js/respond.min.js',
     'js/jquery-1.12.4.min.js', 'js/jquery-2.2.4.min.js'
 ];
@@ -36,14 +36,14 @@ var separate_js_files = [
 /**
  * Add js files here for compress and concatenate
  */
-var concatenated_js_files = [
+var concatenatedJsFiles = [
     'js/main.js'
 ];
 
 /**
  * Add css files here for compress and concatenate
  */
-var concatenated_css_files = [
+var concatenatedCssFiles = [
     'css/normalize.css',
     'css/main.css'
 ];
@@ -144,30 +144,32 @@ gulp.task('copy', function () {
 gulp.task('static-build', function () {
     console.log('\n\tBuild static files...');
     console.log('\tDEBUG is:', DEBUG, '\n');
+    var htmlDir = '';
     gulp.src('img/**/*.{png,jpg,gif,ico}').pipe(gulp.dest(paths.build + '/img'));
     gulp.src('fonts/*.*').pipe(gulp.dest(paths.build + '/fonts'));
     if (IS_PHP) {
         gulp.src('scripts/*.php').pipe(gulp.dest(paths.build));
+        htmlDir = '/html';
     }
-    gulp.src(separate_js_files).pipe(gulp.dest(paths.build + '/js'));
-    gulp.src(concatenated_css_files)
+    gulp.src(separateJsFiles).pipe(gulp.dest(paths.build + '/js'));
+    gulp.src(concatenatedCssFiles)
         .pipe(compress({ type: 'css' }))
         .pipe(concat('styles.min.css'))
         .pipe(gulp.dest(paths.build + '/css'));
-    gulp.src(concatenated_js_files)
+    gulp.src(concatenatedJsFiles)
         .pipe(compress({ type: 'js' }))
         .pipe(concat('app.min.js'))
         .pipe(gulp.dest(paths.build + '/js'));
     gulp.src('html/index.html')
-        .pipe(repl_html({
+        .pipe(replHtml({
             'css': '/css/styles.min.css',
             'js' : '/js/app.min.js',
             'ga' : DEBUG ? '' : GA
         }))
-        //.pipe(repl_str(/"\/js\//g, '"js/'))
-        //.pipe(repl_str(/"\/css\//g, '"css/'))
-        //.pipe(repl_str(/"[^"]+\/img\//g, '"img/'))
-        .pipe(gulp.dest(paths.build + '/html'));
+        //.pipe(replStr(/"\/js\//g, '"js/'))
+        //.pipe(replStr(/"\/css\//g, '"css/'))
+        //.pipe(replStr(/"[^"]+\/img\//g, '"img/'))
+        .pipe(gulp.dest(paths.build + htmlDir));
 });
 
 /**
