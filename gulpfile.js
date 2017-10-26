@@ -17,7 +17,7 @@ var gulp       = require('gulp'),
 var HOST   = '127.0.0.1',
     PORT   = 8090,
     SERVER = HOST + ':' + PORT,
-    GA     = '', // if you need Google Analithic
+    GA     = '', // if you need Google Analytics
     DEBUG  = true,
     IS_PHP = false; // if you need PHP microfw
 
@@ -25,7 +25,7 @@ var paths = {
     'sass'   : './sass/**/*.sass',
     'jade'   : './jade/**/*.jade',
     'coffee' : './coffee/**/*.coffee',
-    'build'  : '../../build'
+    'build'  : 'build' // I'm using ../../build
 };
 
 var separateJsFiles = [
@@ -113,7 +113,7 @@ gulp.task('compile', ['jade', 'sass', 'coffee']);
 /**
  * Development task
  */
-gulp.task('default', ['compile', 'py-server', 'watch']);
+gulp.task('default', ['compile', 'py-server', 'watch', 'browse']);
 
 
 /**
@@ -151,7 +151,7 @@ gulp.task('static-build', function () {
         gulp.src('scripts/*.php').pipe(gulp.dest(paths.build));
         htmlDir = '/html';
     }
-    gulp.src('font-awesome.min.css')
+    gulp.src('css/font-awesome.min.css')
         .pipe(gulp.dest(paths.build + '/css'));
     gulp.src(concatenatedCssFiles)
         .pipe(compress({ type: 'css' }))
