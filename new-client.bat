@@ -46,7 +46,9 @@ echo.
 
 pause && npm init && bower init && ^
 mkdir jade html coffee js sass css img fonts build && ^
-npm install --save gulp gulp-sass gulp-jade gulp-shell gulp-coffee gulp-rename && ^
+npm install --save gulp gutil del gulp-sass gulp-jade gulp-coffee gulp-shell ^
+gulp-rename gulp-sourcemaps gulp-yuicompressor gulp-concat gulp-zip ^
+gulp-html-replace && ^
 bower install --save jquery-legacy=jquery#1.12.4 jquery-modern=jquery#2.2.4 ^
 html5-boilerplate font-awesome html5shiv respond && ^
 curl -O %REPO_URL%gulpfile.js && ^

@@ -28,11 +28,15 @@ new-client.sh
 
 This create skeleton for coding.
 
-For coding execute:
+For development execute:
 ```shell
 gulp
 ```
-and browse http://127.0.0.1:8090/html/
+
+and browse 
+```shell
+gulp browse
+```
 
 For build static project execute:
 ```shell
@@ -44,10 +48,12 @@ and may browse it at http://127.0.0.1:8090/ after:
 gulp py-demo
 ```
 
+Also you may zip builded version:
+```shell
+gulp zip
+```
+
 ## To Do
 
 * Replace Jade with [Pug](https://pugjs.org/)?
-* Add compress and concatenation of CSS and JS files
-* Add sourcemaps
-* Cleanup and Deploy commands add
-* Chain commands
+* Replace coffee, jade, sass to src and js, html, fonts, img, css to dst

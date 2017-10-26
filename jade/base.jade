@@ -12,9 +12,12 @@ html(lang="ru")
             meta(name="og:title" content="")
             meta(name="description" content="")
             meta(name="og:description" content="")
-        link(rel="stylesheet" href="/css/normalize.css")
         link(rel="stylesheet" href="/css/font-awesome.min.css")
+
+        // build:css
+        link(rel="stylesheet" href="/css/normalize.css")
         link(rel="stylesheet" href="/css/main.css")
+        // endbuild
 
         <!--[if lt IE 9]>
         script(src="/js/html5shiv.min.js")
@@ -38,5 +41,10 @@ html(lang="ru")
         
         script(src="/js/jquery-2.2.4.min.js")
         <!--[if lt IE 9]><script src="/js/jquery-1.12.4.min.js"></script><![endif]-->
+        // build:js
         script(src="/js/main.js")
+        // endbuild
+
+        // build:ga
+        // endbuild
 
