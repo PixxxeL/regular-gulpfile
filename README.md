@@ -46,5 +46,8 @@ gulp py-demo
 
 ## To Do
 
-* Replace Jade with [Pug](https://pugjs.org/)
+* Replace Jade with [Pug](https://pugjs.org/)?
 * Add compress and concatenation of CSS and JS files
+* Add sourcemaps
+* Cleanup and Deploy commands add
+* Chain commands
