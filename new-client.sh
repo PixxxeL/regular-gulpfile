@@ -48,6 +48,8 @@ wget $REPO_URL"jade/base.jade" -O jade/base.jade &&
 wget $REPO_URL"jade/index.jade" -O jade/index.jade &&
 wget $REPO_URL"sass/_definitions.sass" -O sass/_definitions.sass &&
 wget $REPO_URL"sass/main.sass" -O sass/main.sass &&
+wget $REPO_URL"img/favicon.ico" -O img/favicon.ico &&
+wget $REPO_URL"img/favicon.png" -O img/favicon.png &&
 gulp compile && gulp copy &&
 rm new-client.sh &&
 echo && echo Job finish!

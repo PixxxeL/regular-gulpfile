@@ -4,8 +4,9 @@ html(lang="ru")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
         meta(name="viewport" content="width=device-width,initial-scale=1")
-        //-link(rel="apple-touch-icon" href="/img/favicon.png")
-        //-link(rel="shortcut icon" href="/img/favicon.ico")
+        link(rel="apple-touch-icon" href="/img/favicon.png")
+        link(rel="shortcut icon" href="/img/favicon.ico")
+        //- Don't forget add title tag
         block head_seo
             meta(name="robots" content="noyaka")
             meta(name="title" content="")
@@ -41,6 +42,7 @@ html(lang="ru")
         
         script(src="/js/jquery-2.2.4.min.js")
         <!--[if lt IE 9]><script src="/js/jquery-1.12.4.min.js"></script><![endif]-->
+        
         // build:js
         script(src="/js/main.js")
         // endbuild

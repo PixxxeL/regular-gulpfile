@@ -151,11 +151,13 @@ gulp.task('static-build', function () {
         gulp.src('scripts/*.php').pipe(gulp.dest(paths.build));
         htmlDir = '/html';
     }
-    gulp.src(separateJsFiles).pipe(gulp.dest(paths.build + '/js'));
+    gulp.src('font-awesome.min.css')
+        .pipe(gulp.dest(paths.build + '/css'));
     gulp.src(concatenatedCssFiles)
         .pipe(compress({ type: 'css' }))
         .pipe(concat('styles.min.css'))
         .pipe(gulp.dest(paths.build + '/css'));
+    gulp.src(separateJsFiles).pipe(gulp.dest(paths.build + '/js'));
     gulp.src(concatenatedJsFiles)
         .pipe(compress({ type: 'js' }))
         .pipe(concat('app.min.js'))

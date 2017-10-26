@@ -57,3 +57,7 @@ gulp zip
 
 * Replace Jade with [Pug](https://pugjs.org/)?
 * Replace coffee, jade, sass to src and js, html, fonts, img, css to dst
+* Add webpack with JSX
+* Add PHP microfw
+* Add integration tests
+* Add FTP deploy

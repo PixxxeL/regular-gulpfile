@@ -60,6 +60,9 @@ curl -O %REPO_URL%jade/index.jade && ^
 cd ..\sass && ^
 curl -O %REPO_URL%sass/_definitions.sass && ^
 curl -O %REPO_URL%sass/main.sass && ^
+cd ..\img && ^
+curl -O %REPO_URL%img/favicon.ico && ^
+curl -O %REPO_URL%img/favicon.png && ^
 cd .. && gulp compile && gulp copy && ^
 del new-client.bat && ^
 echo. && echo Job finish!
