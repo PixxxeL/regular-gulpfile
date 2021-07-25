@@ -1,4 +1,6 @@
-# Regular Gulpfile
+# Regular Gulpfile (DEPRECATED)
+
+There is other better project.
 
 This is intend for simplify HTML/CSS coding on
 [Jade](http://jade-lang.com/) instead HTML,
